@@ -1,0 +1,6 @@
+[user]
+	email = b.w.dougherty@gmail.com
+	name = Brendan Dougherty
+[core]
+	excludesfile = ~/.gitignore_global
+	editor = vim
