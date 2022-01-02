@@ -119,6 +119,8 @@ fi
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
+alias nxargs="xargs -d '\n'"
+
 if [ "$HOSTNAME" = devbox ]; then
   # Rootless docker
   export PATH=/usr/bin:$PATH
