@@ -126,6 +126,7 @@ export EDITOR="$VISUAL"
 
 alias nxargs="xargs -d '\n'"
 alias cm="chezmoi"
+alias mp="multipass"
 
 if command -v kubectl &> /dev/null ; then
   source <(kubectl completion bash)
