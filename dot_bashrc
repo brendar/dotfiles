@@ -126,10 +126,14 @@ export EDITOR="$VISUAL"
 
 alias nxargs="xargs -d '\n'"
 alias cm="chezmoi"
-alias k="kubectl"
 
+if command -v kubectl &> /dev/null ; then
+  source <(kubectl completion bash)
+  alias k="kubectl"
+  complete -F __start_kubectl k
+fi
 
-if [ "$HOSTNAME" = devbox ]; then
+if [ "$HOSTNAME" = devbox ] ; then
   # Rootless docker
   export PATH=/usr/bin:$PATH
   export DOCKER_HOST=unix:///run/user/1000/docker.sock
