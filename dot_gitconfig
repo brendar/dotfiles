@@ -1,6 +1,12 @@
 [user]
-	email = b.w.dougherty@gmail.com
 	name = Brendan Dougherty
+	email = b.w.dougherty@gmail.com
 [core]
 	excludesfile = ~/.gitignore_global
 	editor = vim
+[init]
+	defaultBranch = main
+[includeif "gitdir:~/src/github.com/Shopify/"]
+	path = ~/.gitconfig_shopify
+[include]
+	path = ~/.gitconfig_local
