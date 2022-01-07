@@ -131,7 +131,7 @@ if [ "$HOSTNAME" = devbox ] ; then
   export PATH=$PATH:/usr/local/go/bin
 fi
 
-if [ "$HOSTNAME" = slab-m1.local ] ; then
+if [ "$HOSTNAME" = slab.local ] ; then
     export CLICOLOR=1
     export LSCOLORS=ExFxBxDxCxegedabagacad # Light theme from https://osxdaily.com/2012/02/21/add-color-to-the-terminal-in-mac-os-x/
 
