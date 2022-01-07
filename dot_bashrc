@@ -139,6 +139,7 @@ if [ "$HOSTNAME" = slab-m1.local ] ; then
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
+    alias mysql-dev='mysql -h $(basename $(pwd)).myshopify.io -u root -D $(basename $(pwd))_development'
 
     [[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
 
@@ -157,3 +158,8 @@ if [ "$HOSTNAME" = slab-m1.local ] ; then
 
     kubectl-short-aliases
 fi
+
+if [ "$SPIN" ] ; then
+    alias mysql-dev='mysql -P "$MYSQL_PORT" -u root -D $(basename $(pwd))_development'
+fi
+
