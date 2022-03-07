@@ -157,6 +157,8 @@ if [ "$HOSTNAME" = slab.local ] ; then
     for file in /Users/brendan/src/github.com/Shopify/cloudplatform/workflow-utils/*.bash; do source ${file}; done
 
     kubectl-short-aliases
+
+    export PATH="/usr/local/share/chruby:$PATH"
 fi
 
 if [ "$SPIN" ] ; then
