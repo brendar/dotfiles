@@ -163,3 +163,5 @@ if [ "$SPIN" ] ; then
     alias mysql-dev='mysql -P "$MYSQL_PORT" -u root -D $(basename $(pwd))_development'
 fi
 
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
