@@ -115,6 +115,7 @@ export EDITOR="$VISUAL"
 alias nxargs="xargs -d '\n'"
 alias cm="chezmoi"
 alias mp="multipass"
+alias jq-pod-images='jq -c '\''.items[] | . as $pod | .spec.containers[] | { namespace: $pod.metadata.namespace, pod_name: $pod.metadata.name, pod_phase: $pod.status.phase, container_name: .name, container_image: .image }'\'''
 
 if command -v kubectl &> /dev/null ; then
   source <(kubectl completion bash)
