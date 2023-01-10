@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# 1. Search for text in files using Ripgrep
+# 2. Interactively narrow down the list using fzf and preview in bat
+rg --color=always --line-number --no-heading --smart-case --hidden --glob '!.git/' --follow "$@" |
+  fzf --ansi \
+    --color "hl:-1:underline,hl+:-1:underline:reverse" \
+    --delimiter : \
+    --preview 'bat --color=always {1} --highlight-line {2}' \
+    --preview-window 'up,60%,border-bottom,+{2}+3/3,~3'
+
