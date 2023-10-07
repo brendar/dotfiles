@@ -114,8 +114,6 @@ export EDITOR="$VISUAL"
 
 alias nxargs="xargs -d '\n'"
 alias cm="chezmoi"
-alias mp="multipass"
-alias jq-pod-images='jq -c '\''.items[] | . as $pod | .spec.containers[] | { namespace: $pod.metadata.namespace, pod_name: $pod.metadata.name, pod_phase: $pod.status.phase, container_name: .name, container_image: .image }'\'''
 
 if command -v kubectl &> /dev/null ; then
   source <(kubectl completion bash)
@@ -123,13 +121,9 @@ if command -v kubectl &> /dev/null ; then
   complete -F __start_kubectl k
 fi
 
-if [ "$HOSTNAME" = devbox ] ; then
-  # Rootless docker
-  export PATH=/usr/bin:$PATH
-  export DOCKER_HOST=unix:///run/user/1000/docker.sock
-
-  # Manual go install
-  export PATH=$PATH:/usr/local/go/bin
+if [ "$HOSTNAME" = toppy ] ; then
+  # Allow docker-compose to use rootless podman. See https://major.io/p/rootless-container-management-with-docker-compose-and-podman/
+  export DOCKER_HOST="unix:$XDG_RUNTIME_DIR/podman/podman.sock"
 fi
 
 if [[ $HOSTNAME == slab* ]] ; then
