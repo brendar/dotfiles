@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AlternateMouseScroll</key>
+	<true/>
 	<key>Command</key>
 	<string></string>
 	<key>Default Bookmark Guid</key>
@@ -1853,6 +1855,10 @@
 	</dict>
 	<key>Print In Black And White</key>
 	<true/>
+	<key>QuickPasteBytesPerCall</key>
+	<integer>5832</integer>
+	<key>QuickPasteDelayBetweenCalls</key>
+	<real>0.0013168723089620471</real>
 	<key>SGTRecentFileSearches</key>
 	<array>
 		<dict>

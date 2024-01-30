@@ -143,7 +143,7 @@ if [[ $HOSTNAME == slab* ]] ; then
         source /opt/dev/dev.sh
     fi
 
-    [[ -f /opt/dev/sh/chruby/chruby.sh ]] && type chruby >/dev/null 2>&1 || chruby () { source /opt/dev/sh/chruby/chruby.sh; chruby "$@"; }
+    [[ -f /opt/dev/sh/chruby/chruby.sh ]] && { type chruby >/dev/null 2>&1 || chruby () { source /opt/dev/sh/chruby/chruby.sh; chruby "$@"; } }
 
     [[ -x /opt/homebrew/bin/brew ]] && eval $(/opt/homebrew/bin/brew shellenv)
 
@@ -154,6 +154,11 @@ if [[ $HOSTNAME == slab* ]] ; then
     kubectl-short-aliases
 
     export PATH="/usr/local/share/chruby:$PATH"
+
+    export PATH="/opt/homebrew/opt/go@1.21/bin:$PATH"
+    export PATH="/Users/brendan/go/bin:$PATH"
+
+    chruby 3.3.0
 fi
 
 if [ "$SPIN" ] ; then
