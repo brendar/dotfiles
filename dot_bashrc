@@ -122,8 +122,8 @@ if command -v kubectl &> /dev/null ; then
 fi
 
 if [ "$HOSTNAME" = toppy ] ; then
-  # Allow docker-compose to use rootless podman. See https://major.io/p/rootless-container-management-with-docker-compose-and-podman/
-  export DOCKER_HOST="unix:$XDG_RUNTIME_DIR/podman/podman.sock"
+  export GOROOT=/home/brendan/installs/go1.23.0
+  export PATH="$GOROOT/bin:$PATH"
 fi
 
 if [[ $HOSTNAME == slab* ]] ; then
